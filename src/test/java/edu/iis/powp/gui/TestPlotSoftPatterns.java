@@ -44,7 +44,7 @@ public class TestPlotSoftPatterns {
 
 		IPlotter plotter = new MyAdapter();
 		application.addDriver("Buggy Simulator", plotter);
-
+		application.getDriverManager().setCurrentPlotter(plotter);
 		application.updateDriverInfo();
 	}
 

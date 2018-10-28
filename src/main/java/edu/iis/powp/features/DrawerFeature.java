@@ -4,7 +4,7 @@ import edu.iis.powp.app.Application;
 import edu.iis.powp.events.predefine.SelectClearPanelOptionListener;
 import edu.kis.powp.drawer.panel.DrawPanelController;
 
-public class DrawerFeature {
+public class  DrawerFeature {
 
 	private static DrawPanelController drawerController;
 
@@ -20,8 +20,8 @@ public class DrawerFeature {
 		drawerController = new DrawPanelController();
 		application.addComponentMenu(DrawPanelController.class, "Draw Panel", 0);
 		application.addComponentMenuElement(DrawPanelController.class, "Clear Panel", selectClearPanelOptionListener);
-
 		drawerController.initialize(application.getFreePanel());
+
 	}
 
 	/**
