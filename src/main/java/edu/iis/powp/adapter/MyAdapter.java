@@ -9,7 +9,12 @@ import edu.kis.powp.drawer.shape.LineFactory;
  * Plotter adapter to drawer with several bugs.///
  */
 public class MyAdapter extends DrawPanelController implements IPlotter {
+	//UWAGA MyAdapter dziedziczy z DrawPanelController sprawdzić to !!!!!!!!!!!!!!
+	// DrawPanelController powinien być atrybutem klasy
+	
+	// w rysowaniu powinna wjść skrzynia - drawTo nie zmienia współrzędnych X i Y a powinien
 	private int startX = 0, startY = 0;
+
 
 	public MyAdapter() {
 		super();
@@ -32,6 +37,6 @@ public class MyAdapter extends DrawPanelController implements IPlotter {
 
 	@Override
 	public String toString() {
-		return "@Q!$!@$!#@$(*#@&Q(%^*#@";
+		return "Figure";
 	}
 }
