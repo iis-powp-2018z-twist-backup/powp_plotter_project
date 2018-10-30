@@ -9,7 +9,9 @@ import edu.iis.powp.events.predefine.SelectSecondTestFigureOptionListener;
 import edu.iis.client.plottermagic.ClientPlotter;
 import edu.iis.client.plottermagic.IPlotter;
 import edu.iis.powp.adapter.PlotterAdapter;
+import edu.kis.powp.drawer.shape.LineFactory;
 
+import edu.iis.powp.adapter.LinePlotterAdapter;
 import edu.iis.powp.app.Application;
 import edu.iis.powp.events.predefine.SelectChangeVisibleOptionListener;
 import edu.iis.powp.events.predefine.SelectTestFigureOptionListener;
@@ -46,7 +48,11 @@ public class TestPlotSoftPatterns {
 		application.getDriverManager().setCurrentPlotter(clientPlotter);
 
 		IPlotter plotter = new PlotterAdapter(ApplicationWithDrawer.getDrawPanelController());
+		IPlotter linePlotter= new LinePlotterAdapter(ApplicationWithDrawer.getDrawPanelController(), LineFactory.getSpecialLine());
+
 		application.addDriver("Fixed Buggy Simulator", plotter);
+		application.addDriver("Line Plotter Adapter", linePlotter);
+
 
 		application.updateDriverInfo();
 	}
