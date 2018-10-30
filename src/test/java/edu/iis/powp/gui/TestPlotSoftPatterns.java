@@ -8,7 +8,8 @@ import edu.iis.powp.events.predefine.SelectSecondTestFigureOptionListener;
 
 import edu.iis.client.plottermagic.ClientPlotter;
 import edu.iis.client.plottermagic.IPlotter;
-import edu.iis.powp.adapter.MyAdapter;
+import edu.iis.powp.adapter.PlotterAdapter;
+
 import edu.iis.powp.app.Application;
 import edu.iis.powp.events.predefine.SelectChangeVisibleOptionListener;
 import edu.iis.powp.events.predefine.SelectTestFigureOptionListener;
@@ -44,8 +45,8 @@ public class TestPlotSoftPatterns {
 		application.addDriver("Client Plotter", clientPlotter);
 		application.getDriverManager().setCurrentPlotter(clientPlotter);
 
-		IPlotter plotter = new MyAdapter();
-		application.addDriver("Buggy Simulator", plotter);
+		IPlotter plotter = new PlotterAdapter(ApplicationWithDrawer.getDrawPanelController());
+		application.addDriver("Fixed Buggy Simulator", plotter);
 
 		application.updateDriverInfo();
 	}
