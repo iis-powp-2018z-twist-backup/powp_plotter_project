@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import edu.iis.powp.events.predefine.SelectSecondTestFigureOptionListener;
 
 import edu.iis.client.plottermagic.ClientPlotter;
 import edu.iis.client.plottermagic.IPlotter;
@@ -25,10 +26,11 @@ public class TestPlotSoftPatterns {
 	 *            Application context.
 	 */
 	private static void setupPresetTests(Application application) {
-		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
-				application.getDriverManager());
+		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(application.getDriverManager());
+	    SelectSecondTestFigureOptionListener selectSecondTestFigureOptionListener = new SelectSecondTestFigureOptionListener();
 
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
+		application.addTest("Figure Joe 2", selectSecondTestFigureOptionListener);
 	}
 
 	/**
