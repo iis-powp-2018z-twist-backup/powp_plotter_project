@@ -6,11 +6,11 @@ import edu.iis.powp.app.DriverManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class SelectTestFigureOptionTwoListener implements ActionListener {
+public class SelectJoeTestFigureOptionTwoListener implements ActionListener {
 
 	private DriverManager driverManager;
 
-	public SelectTestFigureOptionTwoListener(DriverManager driverManager) {
+	public SelectJoeTestFigureOptionTwoListener(DriverManager driverManager) {
 		this.driverManager = driverManager;
 	}
 
