@@ -9,6 +9,7 @@ import edu.iis.client.plottermagic.ClientPlotter;
 import edu.iis.client.plottermagic.IPlotter;
 import edu.iis.powp.adapter.MyAdapter;
 import edu.iis.powp.app.Application;
+import edu.iis.powp.events.predefine.SelectAnotherTestFigureOptionListener;
 import edu.iis.powp.events.predefine.SelectChangeVisibleOptionListener;
 import edu.iis.powp.events.predefine.SelectTestFigureOptionListener;
 import edu.iis.powp.features.DrawerFeature;
@@ -27,8 +28,9 @@ public class TestPlotSoftPatterns {
 	private static void setupPresetTests(Application application) {
 		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
 				application.getDriverManager());
-
+		SelectAnotherTestFigureOptionListener selectAnotherTestFigureOptionListener = new SelectAnotherTestFigureOptionListener(application.getDriverManager());
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
+		application.addTest("Figure Joe 2", selectAnotherTestFigureOptionListener);
 	}
 
 	/**
@@ -54,12 +56,12 @@ public class TestPlotSoftPatterns {
 	 * @param application
 	 *            Application context.
 	 */
-	private static void setupDefaultDrawerVisibilityManagement(Application application) {
+	/*private static void setupDefaultDrawerVisibilityManagement(Application application) {
 		DefaultDrawerFrame defaultDrawerWindow = DefaultDrawerFrame.getDefaultDrawerFrame();
 		application.addComponentMenuElementWithCheckBox(DrawPanelController.class, "Default Drawer Visibility",
 				new SelectChangeVisibleOptionListener(defaultDrawerWindow), true);
 		defaultDrawerWindow.setVisible(true);
-	}
+	}*/
 
 	/**
 	 * Setup menu for adjusting logging settings.
@@ -89,7 +91,7 @@ public class TestPlotSoftPatterns {
 				Application app = new Application();
 				DrawerFeature.setupDrawerPlugin(app);
 
-				setupDefaultDrawerVisibilityManagement(app);
+				//setupDefaultDrawerVisibilityManagement(app);
 
 				setupDrivers(app);
 				setupPresetTests(app);

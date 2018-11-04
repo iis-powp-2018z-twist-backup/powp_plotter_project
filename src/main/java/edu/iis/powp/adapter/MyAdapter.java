@@ -32,7 +32,7 @@ public class MyAdapter implements IPlotter {
 		ILine line = LineFactory.getBasicLine();
 		line.setStartCoordinates(this.startX, this.startY);
 		line.setEndCoordinates(x, y);
-
+		setPosition(x,y);
 		drawerFeature.getDrawerController().drawLine(line);
 	}
 
