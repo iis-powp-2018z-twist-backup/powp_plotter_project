@@ -34,6 +34,6 @@ public class DrawingPlotterAdapter implements IPlotter {
 
 	@Override
 	public String toString() {
-		return "@Q!$!@$!#@$(*#@&Q(%^*#@";
+		return "Simulation Plotter";
 	}
 }

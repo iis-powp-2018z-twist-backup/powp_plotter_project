@@ -9,23 +9,27 @@ import edu.iis.client.plottermagic.ClientPlotter;
 import edu.iis.client.plottermagic.IPlotter;
 import edu.iis.powp.adapter.DrawingPlotterAdapter;
 import edu.iis.powp.app.Application;
-import edu.iis.powp.events.predefine.SelectTestFigureOptionListener;
+import edu.iis.powp.events.predefine.SelectTestFigureOptionOneListener;
+import edu.iis.powp.events.predefine.SelectTestFigureOptionTwoListener;
 import edu.iis.powp.features.DrawerFeature;
 
 public class TestPlotSoftPatterns {
 	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
 	/**
-	 * Setup test concerning preset figures in context.
+	 * Setup tests concerning preset figures in context.
 	 * 
 	 * @param application
 	 *            Application context.
 	 */
 	private static void setupPresetTests(Application application) {
-		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
+		SelectTestFigureOptionOneListener selectTestFigureOptionOneListener = new SelectTestFigureOptionOneListener(
+				application.getDriverManager());
+		SelectTestFigureOptionTwoListener selectTestFigureOptionTwoListener = new SelectTestFigureOptionTwoListener(
 				application.getDriverManager());
 
-		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
+		application.addTest("Figure Joe 1", selectTestFigureOptionOneListener);
+		application.addTest("Figure Joe 2", selectTestFigureOptionTwoListener);
 	}
 
 	/**
@@ -40,7 +44,7 @@ public class TestPlotSoftPatterns {
 		application.getDriverManager().setCurrentPlotter(clientPlotter);
 
 		IPlotter plotter = new DrawingPlotterAdapter(DrawerFeature.getDrawerController());
-		application.addDriver("Buggy Simulator", plotter);
+		application.addDriver("Simulation Plotter", plotter);
 
 		application.updateDriverInfo();
 	}
