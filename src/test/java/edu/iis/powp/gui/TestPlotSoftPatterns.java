@@ -54,12 +54,14 @@ public class TestPlotSoftPatterns {
 	 * @param application
 	 *            Application context.
 	 */
+	/*Not used
 	private static void setupDefaultDrawerVisibilityManagement(Application application) {
 		DefaultDrawerFrame defaultDrawerWindow = DefaultDrawerFrame.getDefaultDrawerFrame();
 		application.addComponentMenuElementWithCheckBox(DrawPanelController.class, "Default Drawer Visibility",
 				new SelectChangeVisibleOptionListener(defaultDrawerWindow), true);
 		defaultDrawerWindow.setVisible(true);
 	}
+	*/
 
 	/**
 	 * Setup menu for adjusting logging settings.
