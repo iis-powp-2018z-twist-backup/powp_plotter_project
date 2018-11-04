@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 
 import edu.iis.client.plottermagic.ClientPlotter;
 import edu.iis.client.plottermagic.IPlotter;
-import edu.iis.powp.adapter.MyAdapter;
+import edu.iis.powp.adapter.DemoPlotterAdapter;
 import edu.iis.powp.app.Application;
 import edu.iis.powp.events.predefine.SelectChangeVisibleOptionListener;
 import edu.iis.powp.events.predefine.SelectTestFigureOptionListener;
@@ -42,7 +42,7 @@ public class TestPlotSoftPatterns {
 		application.addDriver("Client Plotter", clientPlotter);
 		application.getDriverManager().setCurrentPlotter(clientPlotter);
 
-		IPlotter plotter = new MyAdapter();
+		IPlotter plotter = new DemoPlotterAdapter();
 		application.addDriver("Buggy Simulator", plotter);
 
 		application.updateDriverInfo();
@@ -58,7 +58,7 @@ public class TestPlotSoftPatterns {
 		DefaultDrawerFrame defaultDrawerWindow = DefaultDrawerFrame.getDefaultDrawerFrame();
 		application.addComponentMenuElementWithCheckBox(DrawPanelController.class, "Default Drawer Visibility",
 				new SelectChangeVisibleOptionListener(defaultDrawerWindow), true);
-		defaultDrawerWindow.setVisible(true);
+		defaultDrawerWindow.setVisible(false);
 	}
 
 	/**
@@ -84,19 +84,17 @@ public class TestPlotSoftPatterns {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				Application app = new Application();
-				DrawerFeature.setupDrawerPlugin(app);
+		EventQueue.invokeLater(() -> {
+			Application app = new Application();
+			DrawerFeature.setupDrawerPlugin(app);
 
-				setupDefaultDrawerVisibilityManagement(app);
+			setupDefaultDrawerVisibilityManagement(app);
 
-				setupDrivers(app);
-				setupPresetTests(app);
-				setupLogger(app);
+			setupDrivers(app);
+			setupPresetTests(app);
+			setupLogger(app);
 
-				app.setVisibility(true);
-			}
+			app.setVisibility(true);
 		});
 	}
 
