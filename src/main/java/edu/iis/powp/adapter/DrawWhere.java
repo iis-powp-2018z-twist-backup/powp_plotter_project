@@ -1,7 +1,6 @@
 package edu.iis.powp.adapter;
 
 import edu.iis.client.plottermagic.IPlotter;
-import edu.iis.powp.features.DrawerFeature;
 import edu.kis.powp.drawer.panel.DrawPanelController;
 import edu.kis.powp.drawer.shape.ILine;
 import edu.kis.powp.drawer.shape.LineFactory;
@@ -9,12 +8,13 @@ import edu.kis.powp.drawer.shape.LineFactory;
 /**
  * Plotter adapter to drawer with several bugs.
  */
-public class DrawAdapter implements IPlotter {
+public class DrawWhere implements IPlotter {
 	private int startX = 0, startY = 0;
-	DrawPanelController drawPanelController = DrawerFeature.getDrawerController();
+	private DrawPanelController drawPanelController;
 
-	public DrawAdapter() {
+	public DrawWhere(DrawPanelController drawPanelController) {
 		super();
+		this.drawPanelController = drawPanelController;
 	}
 
 	@Override

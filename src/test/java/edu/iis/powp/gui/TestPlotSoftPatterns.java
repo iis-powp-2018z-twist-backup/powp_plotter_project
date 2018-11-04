@@ -7,7 +7,8 @@ import java.util.logging.Logger;
 
 import edu.iis.client.plottermagic.ClientPlotter;
 import edu.iis.client.plottermagic.IPlotter;
-import edu.iis.powp.adapter.DrawAdapter;
+import edu.iis.powp.adapter.DrawWhere;
+import edu.iis.powp.adapter.LinePlotterAdapter;
 import edu.iis.powp.app.Application;
 import edu.iis.powp.events.predefine.SelectChangeVisibleOptionListener;
 import edu.iis.powp.events.predefine.SelectTestFigureOptionListener;
@@ -43,9 +44,12 @@ public class TestPlotSoftPatterns {
 		application.addDriver("Client Plotter", clientPlotter);
 		application.getDriverManager().setCurrentPlotter(clientPlotter);
 
-		IPlotter plotter = new DrawAdapter();
+		IPlotter plotter = new DrawWhere(DrawerFeature.getDrawerController());
 		application.addDriver("Buggy Simulator", plotter);
 				
+		IPlotter specialPlotter = new LinePlotterAdapter(DrawerFeature.getDrawerController());
+		application.addDriver("Special Simulator", specialPlotter);
+		
 		application.updateDriverInfo();
 	}
 
