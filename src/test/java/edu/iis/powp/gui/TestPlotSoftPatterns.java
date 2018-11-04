@@ -7,11 +7,12 @@ import java.util.logging.Logger;
 
 import edu.iis.client.plottermagic.ClientPlotter;
 import edu.iis.client.plottermagic.IPlotter;
-import edu.iis.powp.adapter.DrawingPlotterAdapter;
+import edu.iis.powp.adapter.DrawingLinePlotterAdapter;
 import edu.iis.powp.app.Application;
 import edu.iis.powp.events.predefine.SelectTestFigureOptionOneListener;
 import edu.iis.powp.events.predefine.SelectTestFigureOptionTwoListener;
 import edu.iis.powp.features.DrawerFeature;
+import edu.kis.powp.drawer.shape.LineFactory;
 
 public class TestPlotSoftPatterns {
 	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -43,8 +44,12 @@ public class TestPlotSoftPatterns {
 		application.addDriver("Client Plotter", clientPlotter);
 		application.getDriverManager().setCurrentPlotter(clientPlotter);
 
-		IPlotter plotter = new DrawingPlotterAdapter(DrawerFeature.getDrawerController());
-		application.addDriver("Simulation Plotter", plotter);
+		IPlotter basicPlotter = new DrawingLinePlotterAdapter(DrawerFeature.getDrawerController(), LineFactory.getBasicLine());
+		application.addDriver("Basic Line Simulator", basicPlotter);
+		IPlotter dottedPlotter = new DrawingLinePlotterAdapter(DrawerFeature.getDrawerController(), LineFactory.getDottedLine());
+		application.addDriver("Dotted Line Simulator", dottedPlotter);
+		IPlotter specialPlotter = new DrawingLinePlotterAdapter(DrawerFeature.getDrawerController(), LineFactory.getSpecialLine());
+		application.addDriver("Special Line Simulator", specialPlotter);
 
 		application.updateDriverInfo();
 	}
