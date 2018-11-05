@@ -11,9 +11,11 @@ import edu.iis.powp.adapter.MyAdapter;
 import edu.iis.powp.app.Application;
 import edu.iis.powp.events.predefine.SelectChangeVisibleOptionListener;
 import edu.iis.powp.events.predefine.SelectTestFigureOptionListener;
+import edu.iis.powp.events.predefine.SelectTestFigureOptionListener2;
 import edu.iis.powp.features.DrawerFeature;
 import edu.kis.powp.drawer.panel.DefaultDrawerFrame;
 import edu.kis.powp.drawer.panel.DrawPanelController;
+import edu.kis.powp.drawer.shape.LineFactory;
 
 public class TestPlotSoftPatterns {
 	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -27,8 +29,10 @@ public class TestPlotSoftPatterns {
 	private static void setupPresetTests(Application application) {
 		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
 				application.getDriverManager());
+		SelectTestFigureOptionListener2 selectTestFigureOptionListener2 = new SelectTestFigureOptionListener2(null);
 
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
+		application.addTest("Figure Joe 2", selectTestFigureOptionListener2);
 	}
 
 	/**
@@ -42,8 +46,11 @@ public class TestPlotSoftPatterns {
 		application.addDriver("Client Plotter", clientPlotter);
 		application.getDriverManager().setCurrentPlotter(clientPlotter);
 
-		IPlotter plotter = new MyAdapter(null);
+		IPlotter plotter = new MyAdapter(ApplicationWithDrawer.getDrawPanelController());
+		IPlotter linePlotter= new LinePlotterAdapter(ApplicationWithDrawer.getDrawPanelController(), LineFactory.getSpecialLine());
+		
 		application.addDriver("Buggy Simulator", plotter);
+		application.addDriver("Line Plotter", linePlotter);
 
 		application.updateDriverInfo();
 	}
