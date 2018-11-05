@@ -14,7 +14,7 @@ public class Drawer  implements IPlotter {
 	public Drawer() {
 		//super();
 	}
-
+	
 	@Override
 	public void setPosition(int x, int y) {
 		this.startX = x;
@@ -23,7 +23,14 @@ public class Drawer  implements IPlotter {
 
 	@Override
 	public void drawTo(int x, int y) {
-		ILine line = LineFactory.getBasicLine();
+		byte lineId = DrawerFeature.getLineStyle();
+		ILine line = null;
+		if(lineId == 0)
+			line = LineFactory.getBasicLine();
+		if(lineId == 1)
+			line = LineFactory.getDottedLine();
+		if(lineId == 2)
+			line = LineFactory.getSpecialLine();
 		line.setStartCoordinates(this.startX, this.startY);
 		line.setEndCoordinates(x, y);
 		locDrawer.drawLine(line);

@@ -54,6 +54,7 @@ public class TestPlotSoftPatterns {
 	 * @param application
 	 *            Application context.
 	 */
+	
 	/*Not used
 	private static void setupDefaultDrawerVisibilityManagement(Application application) {
 		DefaultDrawerFrame defaultDrawerWindow = DefaultDrawerFrame.getDefaultDrawerFrame();
