@@ -29,6 +29,8 @@ public class TestPlotSoftPatterns {
 				application.getDriverManager());
 
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
+		application.addTest("Figure Joe 2", selectTestFigureOptionListener);
+
 	}
 
 	/**
