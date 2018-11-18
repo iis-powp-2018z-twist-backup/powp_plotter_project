@@ -10,6 +10,7 @@ import edu.iis.powp.events.predefine.SelectTestFigure2OptionListener;
 import edu.iis.powp.features.DrawerFeature;
 import edu.kis.powp.drawer.panel.DefaultDrawerFrame;
 import edu.kis.powp.drawer.panel.DrawPanelController;
+import edu.kis.powp.drawer.shape.LineFactory;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -46,8 +47,14 @@ public class TestPlotSoftPatterns {
 		application.addDriver("Client Plotter", clientPlotter);
 		application.getDriverManager().setCurrentPlotter(clientPlotter);
 
-		IPlotter plotter = new LinePlotterAdapter(DrawerFeature.getDrawerController());
-		application.addDriver(plotter.toString(), plotter);
+		IPlotter basicLinePlotter = new LinePlotterAdapter(DrawerFeature.getDrawerController());
+		application.addDriver("Basic line simulator", basicLinePlotter);
+
+		IPlotter dottedLinePlotter = new LinePlotterAdapter(DrawerFeature.getDrawerController(), LineFactory.getDottedLine());
+		application.addDriver("Dotted line simulator", dottedLinePlotter);
+
+		IPlotter specialLinePlotter = new LinePlotterAdapter(DrawerFeature.getDrawerController(), LineFactory.getSpecialLine());
+		application.addDriver("Special line simulator", specialLinePlotter);
 
 		application.updateDriverInfo();
 	}
