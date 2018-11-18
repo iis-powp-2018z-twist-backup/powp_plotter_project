@@ -51,11 +51,12 @@ public class TestPlotSoftPatterns {
 		application.getDriverManager().setCurrentPlotter(clientPlotter);
 
 		IPlotter plotter = new MyAdapter(DrawerFeature.getDrawerController());
-		IPlotter plotter2 = new LinePlotterAdapter(DrawerFeature.getDrawerController(), null);
+		IPlotter plotter2 = new LinePlotterAdapter(DrawerFeature.getDrawerController());
 		
 		
 		
 		application.addDriver("Buggy Simulator", plotter);
+		application.addDriver("Buggy Simulator2", plotter2);
 
 		application.updateDriverInfo();
 	}
