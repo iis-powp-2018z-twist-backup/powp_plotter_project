@@ -7,11 +7,13 @@ import java.util.logging.Logger;
 
 import edu.iis.client.plottermagic.ClientPlotter;
 import edu.iis.client.plottermagic.IPlotter;
+import edu.iis.powp.adapter.AdapterPloterAdapter;
 import edu.iis.powp.adapter.LinePlotterAdapter;
 import edu.iis.powp.app.Application;
 import edu.iis.powp.events.predefine.SelectChangeVisibleOptionListener;
 import edu.iis.powp.events.predefine.SelectTestFigureOptionListener;
 import edu.iis.powp.events.predefine.SelectTestFigureOptionListener2;
+import edu.iis.powp.events.predefine.SelectTestJaneFigureOptionListener;
 import edu.iis.powp.features.DrawerFeature;
 import edu.kis.powp.drawer.panel.DefaultDrawerFrame;
 import edu.kis.powp.drawer.panel.DrawPanelController;
@@ -31,10 +33,13 @@ public class TestPlotSoftPatterns {
 				application.getDriverManager());
         SelectTestFigureOptionListener2 selectTestFigureOptionListener2 = new SelectTestFigureOptionListener2(
                 application.getDriverManager());
+		SelectTestJaneFigureOptionListener selectTestJaneFigureOptionListener = new SelectTestJaneFigureOptionListener(
+				application.getDriverManager());
 
 
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigureOptionListener2);
+		application.addTest("Figure Jane", selectTestJaneFigureOptionListener);
 
 	}
 
@@ -53,6 +58,11 @@ public class TestPlotSoftPatterns {
 		application.addDriver("Plotter Simulator Basic Line", basicLinePlotter);
         IPlotter dottedLinePlotter = new LinePlotterAdapter(DrawerFeature.getDrawerController(), LineFactory.getDottedLine());
         application.addDriver("Plotter Simulator Dotted Line", dottedLinePlotter);
+
+        AdapterPloterAdapter adapterPlotter = new AdapterPloterAdapter(clientPlotter);
+		application.addDriver("Adapter Plotter Simulator Basic Line", basicLinePlotter);
+
+
 
 		application.updateDriverInfo();
 	}
