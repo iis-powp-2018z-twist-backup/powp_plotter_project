@@ -28,6 +28,7 @@ public class TestPlotSoftPatterns {
 		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
 				application.getDriverManager());
 
+
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigureOptionListener);
 
@@ -44,7 +45,7 @@ public class TestPlotSoftPatterns {
 		application.addDriver("Client Plotter", clientPlotter);
 		application.getDriverManager().setCurrentPlotter(clientPlotter);
 
-		IPlotter plotter = new MyAdapter();
+		IPlotter plotter = new MyAdapter(DrawerFeature.getDrawerController());
 		application.addDriver("Buggy Simulator", plotter);
 
 		application.updateDriverInfo();
