@@ -14,6 +14,8 @@ import edu.iis.powp.features.DrawerFeature;
 import edu.kis.powp.drawer.panel.DefaultDrawerFrame;
 import edu.kis.powp.drawer.panel.DrawPanelController;
 import edu.iis.powp.events.predefine.SelectSecondTestFigureOptionListener;
+import edu.kis.powp.drawer.shape.LineFactory;
+import edu.iis.powp.adapter.LinePlotterAdapter;
 
 public class TestPlotSoftPatterns {
 	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -46,8 +48,12 @@ public class TestPlotSoftPatterns {
 		application.getDriverManager().setCurrentPlotter(clientPlotter);
 
 		IPlotter plotter = new MyAdapter();
+		IPlotter plotter2 = new LinePlotterAdapter(DrawerFeature.getDrawerController());
+		
 		application.addDriver("Buggy Simulator", plotter);
+		application.addDriver("Buggy Simulator2", plotter2);
 
+		
 		application.updateDriverInfo();
 	}
 
