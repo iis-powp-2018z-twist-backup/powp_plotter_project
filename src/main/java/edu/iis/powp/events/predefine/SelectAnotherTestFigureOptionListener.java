@@ -4,14 +4,11 @@ import edu.iis.client.plottermagic.preset.FiguresJoe;
 import edu.iis.powp.app.DriverManager;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class SelectAnotherTestFigureOptionListener implements ActionListener {
-
-    private DriverManager driverManager;
+public class SelectAnotherTestFigureOptionListener extends AbstractActionListener {
 
     public SelectAnotherTestFigureOptionListener(DriverManager driverManager) {
-        this.driverManager = driverManager;
+        super(driverManager);
     }
 
     @Override

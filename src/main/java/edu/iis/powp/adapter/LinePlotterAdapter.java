@@ -1,32 +1,31 @@
 package edu.iis.powp.adapter;
 
-import edu.iis.client.plottermagic.IPlotter;
+import edu.iis.client.plottermagic.AbstractPlotter;
 import edu.iis.powp.features.DrawerFeature;
 import edu.kis.powp.drawer.shape.ILine;
 import edu.kis.powp.drawer.shape.LineFactory;
 
-public class LinePlotterAdapter implements IPlotter {
+public class LinePlotterAdapter extends AbstractPlotter {
 
-    private int startX = 0, startY = 0;
-    private ILine line;
+    protected ILine line;
 
     public LinePlotterAdapter() {
-        super();
+        super(0, 0);
         this.line = LineFactory.getBasicLine();
     }
 
     @Override
-    public void setPosition(int x, int y) {
-        this.startX = x;
-        this.startY = y;
+    public void drawTo(int x, int y) {
+        ILine line = LineFactory.getBasicLine();
+        line.setStartCoordinates(this.getX(), this.getY());
+        line.setEndCoordinates(x, y);
+        setPosition(x, y);
+        DrawerFeature.getDrawerController().drawLine(line);
     }
 
     @Override
-    public void drawTo(int x, int y) {
-        line.setStartCoordinates(this.startX, this.startY);
-        line.setEndCoordinates(x, y);
-        this.setPosition(x, y);
-        DrawerFeature.getDrawerController().drawLine(line);
+    public String toString() {
+        return "Plotter Adapter";
     }
 
     public ILine getLine() {
@@ -35,10 +34,5 @@ public class LinePlotterAdapter implements IPlotter {
 
     public void setLine(ILine line) {
         this.line = line;
-    }
-
-    @Override
-    public String toString() {
-        return "LineAdapter";
     }
 }

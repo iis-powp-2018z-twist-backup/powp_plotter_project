@@ -6,23 +6,22 @@ import edu.iis.powp.app.DriverManager;
 import edu.kis.powp.drawer.shape.ILine;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class SelectLineListener implements ActionListener {
+public class SelectLineListener extends AbstractActionListener {
 
-    private DriverManager driverManager;
     private ILine line;
 
     public SelectLineListener(DriverManager driverManager, ILine line) {
-        this.driverManager = driverManager;
+        super(driverManager);
         this.line = line;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         IPlotter plotter = driverManager.getCurrentPlotter();
-        //todo aby pozbyć się kolejnych instanceof muszę wydzielić linię to klasy wyżej i z niej dziedziczyć DemoPlotter i LinePlotter
-        //jedyny problem, że bez zmiany interfejsu tej jednej instanceof się nie pozbędziemy
+        //todo tu musi zostać instanceof ponieważ nie mogę zmienić interface tak aby dodać metodę setLine
+        //natomiast teraz LinePlotter jest podstawowoym plotterem i jego rozszerzenie gwarantuje że tutaj kolejnego ifa
+        //nie trzeba będzie dopisać
         if (plotter instanceof LinePlotterAdapter) {
             ((LinePlotterAdapter) plotter).setLine(this.line);
         }

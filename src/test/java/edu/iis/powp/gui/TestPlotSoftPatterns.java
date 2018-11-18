@@ -10,9 +10,7 @@ import edu.iis.client.plottermagic.IPlotter;
 import edu.iis.powp.adapter.DemoPlotterAdapter;
 import edu.iis.powp.adapter.LinePlotterAdapter;
 import edu.iis.powp.app.Application;
-import edu.iis.powp.events.predefine.SelectAnotherTestFigureOptionListener;
-import edu.iis.powp.events.predefine.SelectChangeVisibleOptionListener;
-import edu.iis.powp.events.predefine.SelectTestFigureOptionListener;
+import edu.iis.powp.events.predefine.*;
 import edu.iis.powp.features.DrawerFeature;
 import edu.kis.powp.drawer.panel.DefaultDrawerFrame;
 import edu.kis.powp.drawer.panel.DrawPanelController;
@@ -33,8 +31,13 @@ public class TestPlotSoftPatterns {
 		SelectAnotherTestFigureOptionListener anotherFigureListener = new SelectAnotherTestFigureOptionListener(
 				application.getDriverManager());
 
+        DrawRectangleListener rectangleListener = new DrawRectangleListener(application.getDriverManager());
+        DrawTriangleListener drawTriangleListener = new DrawTriangleListener(application.getDriverManager());
+
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", anotherFigureListener);
+        application.addTest("Draw rectangle", rectangleListener);
+        application.addTest("Draw triangle", drawTriangleListener);
 	}
 
 	/**

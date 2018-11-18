@@ -15,7 +15,7 @@ public class ComplexCommand implements PlotterCommand {
 
     @Override
     public void execute(IPlotter plotter) {
-        commands.forEach(c -> execute(plotter));
+        commands.forEach(c -> c.execute(plotter));
     }
 
     public void addCommand(PlotterCommand command) {
