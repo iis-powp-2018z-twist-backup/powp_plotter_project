@@ -48,10 +48,12 @@ public class TestPlotSoftPatterns {
 		application.getDriverManager().setCurrentPlotter(clientPlotter);
 
 		IPlotter plotter = new MyAdapter();
-		IPlotter plotter2 = new LinePlotterAdapter(DrawerFeature.getDrawerController());
-		
+		IPlotter plotter2 = new LinePlotterAdapter(DrawerFeature.getDrawerController(), LineFactory.getSpecialLine());
+		IPlotter plotter3 = new LinePlotterAdapter(DrawerFeature.getDrawerController(), LineFactory.getDottedLine());
+
 		application.addDriver("Buggy Simulator", plotter);
 		application.addDriver("Buggy Simulator2", plotter2);
+		application.addDriver("Buggy Simulator3", plotter3);
 
 		
 		application.updateDriverInfo();
