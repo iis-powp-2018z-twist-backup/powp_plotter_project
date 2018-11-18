@@ -10,6 +10,7 @@ import edu.iis.client.plottermagic.IPlotter;
 import edu.iis.powp.adapter.MyAdapter;
 import edu.iis.powp.app.Application;
 import edu.iis.powp.events.predefine.SelectChangeVisibleOptionListener;
+import edu.iis.powp.events.predefine.SelectTestFigureOptionListener2;
 import edu.iis.powp.events.predefine.SelectTestFigureOptionListener;
 import edu.iis.powp.features.DrawerFeature;
 import edu.kis.powp.drawer.panel.DefaultDrawerFrame;
@@ -27,9 +28,15 @@ public class TestPlotSoftPatterns {
 	private static void setupPresetTests(Application application) {
 		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
 				application.getDriverManager());
-
+		
+		SelectTestFigureOptionListener2 selectTestFigureOptionListener2 = new SelectTestFigureOptionListener2(
+				application.getDriverManager());
+				
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
+		application.addTest("Figure Joe 2", selectTestFigureOptionListener2);
 	}
+	
+
 
 	/**
 	 * Setup driver manager, and set default IPlotter for application.
@@ -42,7 +49,7 @@ public class TestPlotSoftPatterns {
 		application.addDriver("Client Plotter", clientPlotter);
 		application.getDriverManager().setCurrentPlotter(clientPlotter);
 
-		IPlotter plotter = new MyAdapter();
+		IPlotter plotter = new MyAdapter(DrawerFeature.getDrawerController());
 		application.addDriver("Buggy Simulator", plotter);
 
 		application.updateDriverInfo();
@@ -54,6 +61,7 @@ public class TestPlotSoftPatterns {
 	 * @param application
 	 *            Application context.
 	 */
+
 	private static void setupDefaultDrawerVisibilityManagement(Application application) {
 		DefaultDrawerFrame defaultDrawerWindow = DefaultDrawerFrame.getDefaultDrawerFrame();
 		application.addComponentMenuElementWithCheckBox(DrawPanelController.class, "Default Drawer Visibility",
@@ -89,7 +97,7 @@ public class TestPlotSoftPatterns {
 				Application app = new Application();
 				DrawerFeature.setupDrawerPlugin(app);
 
-				setupDefaultDrawerVisibilityManagement(app);
+				//setupDefaultDrawerVisibilityManagement(app);
 
 				setupDrivers(app);
 				setupPresetTests(app);
