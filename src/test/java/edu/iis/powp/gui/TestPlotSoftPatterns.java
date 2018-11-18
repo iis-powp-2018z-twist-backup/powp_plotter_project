@@ -15,6 +15,7 @@ import edu.iis.powp.events.predefine.SelectTestFigureOptionListener2;
 import edu.iis.powp.features.DrawerFeature;
 import edu.kis.powp.drawer.panel.DefaultDrawerFrame;
 import edu.kis.powp.drawer.panel.DrawPanelController;
+import edu.kis.powp.drawer.shape.LineFactory;
 
 public class TestPlotSoftPatterns {
 	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -22,13 +23,12 @@ public class TestPlotSoftPatterns {
 	/**
 	 * Setup test concerning preset figures in context.
 	 * 
-	 * @param application
-	 *            Application context.
+	 * @param application Application context.
 	 */
 	private static void setupPresetTests(Application application) {
 		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
 				application.getDriverManager());
-		
+
 		SelectTestFigureOptionListener2 selectTestFigureOptionListener2 = new SelectTestFigureOptionListener2(
 				application.getDriverManager());
 
@@ -39,16 +39,19 @@ public class TestPlotSoftPatterns {
 	/**
 	 * Setup driver manager, and set default IPlotter for application.
 	 * 
-	 * @param application
-	 *            Application context.
+	 * @param application Application context.
 	 */
 	private static void setupDrivers(Application application) {
 		IPlotter clientPlotter = new ClientPlotter();
 		application.addDriver("Client Plotter", clientPlotter);
 		application.getDriverManager().setCurrentPlotter(clientPlotter);
 
-		IPlotter plotter = new LinePlotterAdapter(DrawerFeature.getDrawerController());
+		IPlotter plotter = new LinePlotterAdapter(DrawerFeature.getDrawerController(), LineFactory.getSpecialLine());
+		IPlotter plotter2 = new LinePlotterAdapter(DrawerFeature.getDrawerController(), LineFactory.getBasicLine());
+
 		application.addDriver("Buggy Simulator", plotter);
+
+		application.addDriver("Buggy Simulator2", plotter2);
 
 		application.updateDriverInfo();
 	}
@@ -56,8 +59,7 @@ public class TestPlotSoftPatterns {
 	/**
 	 * Auxiliary routines to enable using Buggy Simulator.
 	 * 
-	 * @param application
-	 *            Application context.
+	 * @param application Application context.
 	 */
 	private static void setupDefaultDrawerVisibilityManagement(Application application) {
 		DefaultDrawerFrame defaultDrawerWindow = DefaultDrawerFrame.getDefaultDrawerFrame();
@@ -69,8 +71,7 @@ public class TestPlotSoftPatterns {
 	/**
 	 * Setup menu for adjusting logging settings.
 	 * 
-	 * @param application
-	 *            Application context.
+	 * @param application Application context.
 	 */
 	private static void setupLogger(Application application) {
 		application.addComponentMenu(Logger.class, "Logger", 0);
