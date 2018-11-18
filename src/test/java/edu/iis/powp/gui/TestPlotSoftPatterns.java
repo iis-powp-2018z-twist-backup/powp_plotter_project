@@ -5,8 +5,9 @@ import edu.iis.client.plottermagic.IPlotter;
 import edu.iis.powp.adapter.LinePlotterAdapter;
 import edu.iis.powp.app.Application;
 import edu.iis.powp.events.predefine.SelectChangeVisibleOptionListener;
-import edu.iis.powp.events.predefine.SelectTestFigure1OptionListener;
-import edu.iis.powp.events.predefine.SelectTestFigure2OptionListener;
+import edu.iis.powp.events.predefine.SelectTestFigureJaneOptionListener;
+import edu.iis.powp.events.predefine.SelectTestFigureJoe1OptionListener;
+import edu.iis.powp.events.predefine.SelectTestFigureJoe2OptionListener;
 import edu.iis.powp.features.DrawerFeature;
 import edu.kis.powp.drawer.panel.DefaultDrawerFrame;
 import edu.kis.powp.drawer.panel.DrawPanelController;
@@ -27,13 +28,16 @@ public class TestPlotSoftPatterns {
 	 *            Application context.
 	 */
 	private static void setupPresetTests(Application application) {
-		SelectTestFigure1OptionListener selectTestFigure1OptionListener = new SelectTestFigure1OptionListener(
+		SelectTestFigureJoe1OptionListener selectTestFigureJoe1OptionListener = new SelectTestFigureJoe1OptionListener(
 				application.getDriverManager());
-		SelectTestFigure2OptionListener selectTestFigure2OptionListener = new SelectTestFigure2OptionListener(
+		SelectTestFigureJoe2OptionListener selectTestFigureJoe2OptionListener = new SelectTestFigureJoe2OptionListener(
+				application.getDriverManager());
+		SelectTestFigureJaneOptionListener selectTestFigureJaneOptionListener = new SelectTestFigureJaneOptionListener(
 				application.getDriverManager());
 
-		application.addTest("Figure Joe 1", selectTestFigure1OptionListener);
-		application.addTest("Figure Joe 2", selectTestFigure2OptionListener);
+		application.addTest("Figure Joe 1", selectTestFigureJoe1OptionListener);
+		application.addTest("Figure Joe 2", selectTestFigureJoe2OptionListener);
+		application.addTest("Figure Jane", selectTestFigureJaneOptionListener);
 	}
 
 	/**
