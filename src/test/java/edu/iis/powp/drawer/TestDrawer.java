@@ -1,6 +1,6 @@
 package edu.iis.powp.drawer;
 
-import edu.iis.powp.adapter.MyAdapter;
+import edu.iis.powp.adapter.DrawPlotterAdapter;
 import edu.iis.powp.features.DrawerFeature;
 import edu.kis.powp.drawer.panel.DefaultDrawerFrame;
 import edu.kis.powp.drawer.panel.DrawPanelController;
@@ -17,7 +17,7 @@ public class TestDrawer {
      * Drawer test.
      */
     public static void main(String[] args) {
-        MyAdapter test = new MyAdapter(DrawerFeature.getDrawerController());
+        DrawPlotterAdapter test = new DrawPlotterAdapter(DrawerFeature.getDrawerController());
         DrawPanelController controller = new DrawPanelController();
         DefaultDrawerFrame.getDefaultDrawerFrame().setVisible(true);
         ILine line = LineFactory.getBasicLine();
