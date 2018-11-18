@@ -16,6 +16,7 @@ public class IPlotterTest {
 	 */
 	public static void main(String[] args) {
 		FiguresJoe.figureScript1(plotter);
+
 	}
 
 	private static class TestPlotter implements IPlotter {
