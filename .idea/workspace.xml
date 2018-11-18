@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a245305d-2df1-4639-b31e-32b93429f0f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/iis/powp/events/predefine/SelectTestFigureOptionListener2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/iis/powp/adapter/MyAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/iis/powp/adapter/DrawPlotterAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/iis/powp/adapter/DrawPlotterAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/iis/powp/adapter/LinePlotterAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/iis/powp/drawer/TestDrawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/iis/powp/drawer/TestDrawer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/iis/powp/gui/TestPlotSoftPatterns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/iis/powp/gui/TestPlotSoftPatterns.java" afterDir="false" />
     </list>
@@ -46,27 +45,26 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="22" />
-          <entry key="java" value="249" />
+          <entry key="dummy" value="26" />
+          <entry key="java" value="452" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="249" />
-          <entry key="PLAIN_TEXT" value="22" />
+          <entry key="JAVA" value="452" />
+          <entry key="PLAIN_TEXT" value="26" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iis/powp/adapter/DrawPlotterAdapter.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/iis/powp/adapter/LinePlotterAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
+            <state relative-caret-position="-299">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="e#863#864#0" expanded="true" />
                 <element signature="e#902#903#0" expanded="true" />
               </folding>
@@ -77,8 +75,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/edu/iis/powp/gui/TestPlotSoftPatterns.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="50" column="58" selection-start-line="50" selection-start-column="58" selection-end-line="50" selection-end-column="58" />
+            <state relative-caret-position="315">
+              <caret line="60" column="58" lean-forward="true" selection-start-line="60" selection-start-column="58" selection-end-line="60" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -131,7 +129,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/iis/powp/features/DrawerFeature.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
+            <state relative-caret-position="230">
               <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -140,11 +138,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/edu/iis/powp/drawer/TestDrawer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+            <state relative-caret-position="107">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -186,11 +184,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/edu/iis/powp/features/DrawerFeature.java" />
-        <option value="$PROJECT_DIR$/src/test/java/edu/iis/powp/drawer/TestDrawer.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iis/powp/events/predefine/SelectTestFigureOptionListener2.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iis/powp/adapter/MyAdapter.java" />
-        <option value="$PROJECT_DIR$/src/test/java/edu/iis/powp/gui/TestPlotSoftPatterns.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/iis/powp/adapter/DrawPlotterAdapter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/iis/powp/adapter/LinePlotterAdapter.java" />
+        <option value="$PROJECT_DIR$/src/test/java/edu/iis/powp/gui/TestPlotSoftPatterns.java" />
+        <option value="$PROJECT_DIR$/src/test/java/edu/iis/powp/drawer/TestDrawer.java" />
       </list>
     </option>
   </component>
@@ -309,15 +308,6 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="powp" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="plotter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="powp_plotter_project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="powp" type="462c0819:PsiDirectoryNode" />
               <item name="iplotter" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -366,7 +356,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542556205304" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542558641802" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
@@ -383,7 +373,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TestPlotSoftPatterns">
+  <component name="RunManager" selected="Application.TestDrawer">
     <configuration name="IPlotterTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.iis.powp.iplotter.IPlotterTest" />
       <module name="plotter" />
@@ -430,8 +420,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestPlotSoftPatterns" />
         <item itemvalue="Application.TestDrawer" />
+        <item itemvalue="Application.TestPlotSoftPatterns" />
         <item itemvalue="Application.IPlotterTest" />
       </list>
     </recent_temporary>
@@ -453,15 +443,16 @@
       <workItem from="1541343683999" duration="1149000" />
       <workItem from="1541345336400" duration="3447000" />
       <workItem from="1541414990703" duration="8000" />
-      <workItem from="1542550552265" duration="4276000" />
+      <workItem from="1542550552265" duration="6464000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12516000" />
+    <option name="totallyTimeSpent" value="14704000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2753404" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -472,14 +463,14 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.3289689" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -540,17 +531,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iis/powp/events/predefine/SelectClearPanelOptionListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iis/powp/events/predefine/SelectChangeVisibleOptionListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/edu/iis/powp/drawer/TestDrawer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+        <state relative-caret-position="-29">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -566,7 +550,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/iis/powp/features/DrawerFeature.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
+        <state relative-caret-position="230">
           <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -574,10 +558,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iis/powp/events/predefine/SelectChangeVisibleOptionListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iis/powp/adapter/LinePlotterAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-29">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="-299">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#863#864#0" expanded="true" />
+            <element signature="e#902#903#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -601,25 +589,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iis/powp/events/predefine/SelectClearPanelOptionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/edu/iis/powp/gui/TestPlotSoftPatterns.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="50" column="58" selection-start-line="50" selection-start-column="58" selection-end-line="50" selection-end-column="58" />
+        <state relative-caret-position="315">
+          <caret line="60" column="58" lean-forward="true" selection-start-line="60" selection-start-column="58" selection-end-line="60" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/iis/powp/adapter/DrawPlotterAdapter.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/edu/iis/powp/drawer/TestDrawer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#863#864#0" expanded="true" />
-            <element signature="e#902#903#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="107">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
