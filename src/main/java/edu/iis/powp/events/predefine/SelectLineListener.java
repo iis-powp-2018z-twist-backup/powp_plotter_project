@@ -21,6 +21,8 @@ public class SelectLineListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         IPlotter plotter = driverManager.getCurrentPlotter();
+        //todo aby pozbyć się kolejnych instanceof muszę wydzielić linię to klasy wyżej i z niej dziedziczyć DemoPlotter i LinePlotter
+        //jedyny problem, że bez zmiany interfejsu tej jednej instanceof się nie pozbędziemy
         if (plotter instanceof LinePlotterAdapter) {
             ((LinePlotterAdapter) plotter).setLine(this.line);
         }
