@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 
 import edu.iis.client.plottermagic.ClientPlotter;
 import edu.iis.client.plottermagic.IPlotter;
+import edu.iis.powp.adapter.LinePlotterAdapter;
 import edu.iis.powp.adapter.MyAdapter;
 import edu.iis.powp.app.Application;
 import edu.iis.powp.events.predefine.SelectChangeVisibleOptionListener;
@@ -50,6 +51,10 @@ public class TestPlotSoftPatterns {
 		application.getDriverManager().setCurrentPlotter(clientPlotter);
 
 		IPlotter plotter = new MyAdapter(DrawerFeature.getDrawerController());
+		IPlotter plotter2 = new LinePlotterAdapter(DrawerFeature.getDrawerController(), null);
+		
+		
+		
 		application.addDriver("Buggy Simulator", plotter);
 
 		application.updateDriverInfo();
@@ -62,6 +67,7 @@ public class TestPlotSoftPatterns {
 	 *            Application context.
 	 */
 
+	@SuppressWarnings("unused")
 	private static void setupDefaultDrawerVisibilityManagement(Application application) {
 		DefaultDrawerFrame defaultDrawerWindow = DefaultDrawerFrame.getDefaultDrawerFrame();
 		application.addComponentMenuElementWithCheckBox(DrawPanelController.class, "Default Drawer Visibility",
