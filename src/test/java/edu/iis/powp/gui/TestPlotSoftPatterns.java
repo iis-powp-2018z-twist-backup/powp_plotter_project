@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 
 import edu.iis.client.plottermagic.ClientPlotter;
 import edu.iis.client.plottermagic.IPlotter;
+import edu.iis.powp.adapter.LinePlotterAdapter;
 import edu.iis.powp.adapter.MyAdapter;
 import edu.iis.powp.app.Application;
 import edu.iis.powp.events.predefine.SelectAnotherTestFigureOptionListener;
@@ -15,6 +16,7 @@ import edu.iis.powp.events.predefine.SelectTestFigureOptionListener;
 import edu.iis.powp.features.DrawerFeature;
 import edu.kis.powp.drawer.panel.DefaultDrawerFrame;
 import edu.kis.powp.drawer.panel.DrawPanelController;
+import edu.kis.powp.drawer.shape.LineFactory;
 
 public class TestPlotSoftPatterns {
 	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -40,13 +42,19 @@ public class TestPlotSoftPatterns {
 	 *            Application context.
 	 */
 	private static void setupDrivers(Application application) {
+
 		IPlotter clientPlotter = new ClientPlotter();
 		application.addDriver("Client Plotter", clientPlotter);
 		application.getDriverManager().setCurrentPlotter(clientPlotter);
 
-		IPlotter plotter = new MyAdapter();
-		application.addDriver("Buggy Simulator", plotter);
-		application.getDriverManager().setCurrentPlotter(plotter);
+		IPlotter basicPlotter = new MyAdapter(LineFactory.getBasicLine(), DrawerFeature.getDrawerController());
+		application.addDriver("Buggy Simulator", basicPlotter);
+		application.getDriverManager().setCurrentPlotter(basicPlotter);
+		application.updateDriverInfo();
+
+		IPlotter specialPlotter = new LinePlotterAdapter(LineFactory.getSpecialLine(), DrawerFeature.getDrawerController());
+		application.addDriver("Nigga Simulator", specialPlotter);
+		application.getDriverManager().setCurrentPlotter(specialPlotter);
 		application.updateDriverInfo();
 	}
 

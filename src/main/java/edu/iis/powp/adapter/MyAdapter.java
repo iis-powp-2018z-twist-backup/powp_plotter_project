@@ -11,17 +11,16 @@ import edu.kis.powp.drawer.shape.LineFactory;
  */
 public class MyAdapter implements IPlotter {
 	private int startX = 0, startY = 0;
+	private ILine line;
+	private DrawPanelController drawer;
 
-	public MyAdapter() {
-		super();
-	}
-	private DrawerFeature drawerFeature;
 
-	public void setDrawerFeature(DrawerFeature drawerFeature) {
-		this.drawerFeature = drawerFeature;
-	};
+    public MyAdapter(ILine line, DrawPanelController drawer) {
+        this.line = line;
+        this.drawer = drawer;
+    }
 
-	@Override
+    @Override
 	public void setPosition(int x, int y) {
 		this.startX = x;
 		this.startY = y;
@@ -29,11 +28,11 @@ public class MyAdapter implements IPlotter {
 
 	@Override
 	public void drawTo(int x, int y) {
-		ILine line = LineFactory.getBasicLine();
+
 		line.setStartCoordinates(this.startX, this.startY);
 		line.setEndCoordinates(x, y);
 		setPosition(x,y);
-		drawerFeature.getDrawerController().drawLine(line);
+		drawer.drawLine(line);
 	}
 
 	@Override
