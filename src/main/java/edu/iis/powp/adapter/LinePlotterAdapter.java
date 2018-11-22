@@ -14,7 +14,7 @@ public class LinePlotterAdapter implements IPlotter {
 	private DrawPanelController drawPanelController;
 	
 	public LinePlotterAdapter(DrawPanelController drawPanelController) {
-		this.drawPanelController = drawPanelController;
+		this.drawPanelController =drawPanelController;
 	}
 	
 
@@ -37,9 +37,5 @@ public class LinePlotterAdapter implements IPlotter {
 	public void setDrawPanelController(DrawPanelController drawPanelController) {
 		this.drawPanelController = drawPanelController;
 	}
-
-
-
-
 
 }

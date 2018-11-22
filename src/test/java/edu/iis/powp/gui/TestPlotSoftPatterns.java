@@ -10,6 +10,8 @@ import edu.iis.client.plottermagic.IPlotter;
 import edu.iis.powp.adapter.LinePlotterAdapter;
 import edu.iis.powp.adapter.MyAdapter;
 import edu.iis.powp.app.Application;
+import edu.iis.powp.command.CommandDrawLineToPosition;
+import edu.iis.powp.command.ComplexCommand;
 import edu.iis.powp.events.predefine.SelectChangeVisibleOptionListener;
 import edu.iis.powp.events.predefine.SelectTestFigureOptionListener2;
 import edu.iis.powp.events.predefine.SelectTestFigureOptionListener;
@@ -52,12 +54,17 @@ public class TestPlotSoftPatterns {
 
 		IPlotter plotter = new MyAdapter(DrawerFeature.getDrawerController());
 		IPlotter plotter2 = new LinePlotterAdapter(DrawerFeature.getDrawerController());
+		IPlotter plotter3 = (IPlotter) new CommandDrawLineToPosition( DrawerFeature.getDrawerController());
+		IPlotter plotter4 = (IPlotter) new CommandDrawLineToPosition(DrawerFeature.getDrawerController());		
 		
 		
 		
 		application.addDriver("Buggy Simulator", plotter);
 		application.addDriver("Buggy Simulator2", plotter2);
-
+		application.addDriver("Rectangle Simulator", plotter3);
+		application.addDriver("Circle Simulator", plotter4);
+		
+		
 		application.updateDriverInfo();
 	}
 
