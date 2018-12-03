@@ -2,7 +2,7 @@ package edu.iis.powp.command;
 
 public class FactoryCircle {
 
-    public ComplexCommand draw() {
+    public static ComplexCommand draw() {
     	
         ComplexCommand command = new ComplexCommand();
         

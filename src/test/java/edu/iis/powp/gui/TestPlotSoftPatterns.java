@@ -13,7 +13,9 @@ import edu.iis.powp.app.Application;
 import edu.iis.powp.command.CommandDrawLineToPosition;
 import edu.iis.powp.command.ComplexCommand;
 import edu.iis.powp.events.predefine.SelectChangeVisibleOptionListener;
+import edu.iis.powp.events.predefine.SelectTestCircleOptionListener;
 import edu.iis.powp.events.predefine.SelectTestFigureOptionListener2;
+import edu.iis.powp.events.predefine.SelectTestRectangleOptionListener;
 import edu.iis.powp.events.predefine.SelectTestFigureOptionListener;
 import edu.iis.powp.features.DrawerFeature;
 import edu.kis.powp.drawer.panel.DefaultDrawerFrame;
@@ -34,9 +36,19 @@ public class TestPlotSoftPatterns {
 		
 		SelectTestFigureOptionListener2 selectTestFigureOptionListener2 = new SelectTestFigureOptionListener2(
 				application.getDriverManager());
+
+		SelectTestRectangleOptionListener selectTestRectangleOptionListener = new SelectTestRectangleOptionListener(
+				application.getDriverManager());
+		
+		SelectTestCircleOptionListener selectTestCircleOptionListener = new SelectTestCircleOptionListener(
+				application.getDriverManager());
+		
 				
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigureOptionListener2);
+		application.addTest("Rectangle Simulator", selectTestRectangleOptionListener);
+		application.addTest("Circle Simulator", selectTestCircleOptionListener);
+		
 	}
 	
 
@@ -54,15 +66,10 @@ public class TestPlotSoftPatterns {
 
 		IPlotter plotter = new MyAdapter(DrawerFeature.getDrawerController());
 		IPlotter plotter2 = new LinePlotterAdapter(DrawerFeature.getDrawerController());
-		IPlotter plotter3 = (IPlotter) new CommandDrawLineToPosition( DrawerFeature.getDrawerController());
-		IPlotter plotter4 = (IPlotter) new CommandDrawLineToPosition(DrawerFeature.getDrawerController());		
-		
-		
 		
 		application.addDriver("Buggy Simulator", plotter);
 		application.addDriver("Buggy Simulator2", plotter2);
-		application.addDriver("Rectangle Simulator", plotter3);
-		application.addDriver("Circle Simulator", plotter4);
+
 		
 		
 		application.updateDriverInfo();
