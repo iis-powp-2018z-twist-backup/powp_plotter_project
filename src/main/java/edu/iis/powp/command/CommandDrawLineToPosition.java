@@ -12,8 +12,8 @@ public class CommandDrawLineToPosition implements PlotterCommand {
 	}
 	
 	@Override
-	public void execute(IPlotter driver) {
+	public void execute(IPlotter plotter) {
 		// TODO Auto-generated method stub
-		
+		plotter.drawTo(x, y);
 	}
 }

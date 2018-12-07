@@ -16,10 +16,10 @@ public class ComplexCommand implements PlotterCommand {
 	}
 		
 	@Override
-	public void execute(IPlotter driver) {
+	public void execute(IPlotter plotter) {
 		// TODO Auto-generated method stub
 		for(PlotterCommand pC : commands) {
-			pC.execute(driver);
+			pC.execute(plotter);
 		}
 	}
 }

@@ -2,7 +2,7 @@ package edu.iis.powp.command;
 
 public class TriangleComplexCommandFactory {
 	
-ComplexCommand getTriangleDrawCommand(int x0, int y0, int x1, int y1, int x2, int y2) {
+public static ComplexCommand getTriangleDrawCommand(int x0, int y0, int x1, int y1, int x2, int y2) {
 	ComplexCommand cc = new ComplexCommand();
 	
 	cc.addCommand(new CommandSetPosition(x0, y0));

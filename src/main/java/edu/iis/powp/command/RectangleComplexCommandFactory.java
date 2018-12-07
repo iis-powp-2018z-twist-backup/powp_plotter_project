@@ -1,7 +1,7 @@
 package edu.iis.powp.command;
 
 public class RectangleComplexCommandFactory {
- 	ComplexCommand getRectangleDrawCommand(int startPosX, int startPosY, int height, int width) {
+ 	public static ComplexCommand getRectangleDrawCommand(int startPosX, int startPosY, int height, int width) {
 		ComplexCommand cc = new ComplexCommand();
 		
 		cc.addCommand(new CommandSetPosition(startPosX, startPosY));
