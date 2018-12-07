@@ -1,8 +1,12 @@
 package edu.iis.powp.factory;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import edu.iis.powp.command.CommandDrawLineToPosition;
 import edu.iis.powp.command.CommandSetPosition;
 import edu.iis.powp.command.ComplexCommand;
+import edu.iis.powp.command.PlotterCommand;
 
 public class TriangleFactory extends ShapeFactory {
 	
@@ -10,6 +14,7 @@ public class TriangleFactory extends ShapeFactory {
 	private int height;
 	private int x;
 	private int y;
+	List<PlotterCommand> plotterCommands = new ArrayList<>();
 
 	public TriangleFactory(int width, int height) {
 		this(width, height, 0, 0);
@@ -27,7 +32,7 @@ public class TriangleFactory extends ShapeFactory {
 	@Override
 	public ComplexCommand createShape() {
 		
-		ComplexCommand command = new ComplexCommand();
+		ComplexCommand command = new ComplexCommand(plotterCommands);
 		command.addPlotterCommand(new CommandSetPosition(x, y));
 		command.addPlotterCommand(new CommandDrawLineToPosition(x + width, y));
 		command.addPlotterCommand(new CommandDrawLineToPosition(x, y + height));

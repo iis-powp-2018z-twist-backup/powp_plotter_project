@@ -8,7 +8,7 @@ import java.util.List;
 public class ComplexCommand implements PlotterCommand {
 	private List<PlotterCommand> commandList;
 
-	public ComplexCommand() {
+	public ComplexCommand(List<PlotterCommand> plotterCommands) {
 		commandList = new LinkedList<>();
 	}
 
