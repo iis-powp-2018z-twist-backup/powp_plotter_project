@@ -10,10 +10,8 @@ import edu.iis.client.plottermagic.IPlotter;
 import edu.iis.powp.adapter.LinePlotterAdapter;
 import edu.iis.powp.adapter.MyAdapter;
 import edu.iis.powp.app.Application;
-import edu.iis.powp.command.CommandDrawLineToPosition;
-import edu.iis.powp.command.ComplexCommand;
 import edu.iis.powp.events.predefine.SelectChangeVisibleOptionListener;
-import edu.iis.powp.events.predefine.SelectTestCircleOptionListener;
+import edu.iis.powp.events.predefine.SelectTestValveOptionListener;
 import edu.iis.powp.events.predefine.SelectTestFigureOptionListener2;
 import edu.iis.powp.events.predefine.SelectTestRectangleOptionListener;
 import edu.iis.powp.events.predefine.SelectTestFigureOptionListener;
@@ -40,14 +38,14 @@ public class TestPlotSoftPatterns {
 		SelectTestRectangleOptionListener selectTestRectangleOptionListener = new SelectTestRectangleOptionListener(
 				application.getDriverManager());
 		
-		SelectTestCircleOptionListener selectTestCircleOptionListener = new SelectTestCircleOptionListener(
+		SelectTestValveOptionListener selectTestValveOptionListener = new SelectTestValveOptionListener(
 				application.getDriverManager());
 		
 				
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigureOptionListener2);
 		application.addTest("Rectangle Simulator", selectTestRectangleOptionListener);
-		application.addTest("Circle Simulator", selectTestCircleOptionListener);
+		application.addTest("Valve Simulator", selectTestValveOptionListener);
 		
 	}
 	
