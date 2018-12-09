@@ -5,11 +5,13 @@ public class CommandSetPosition implements PlotterComand {
     private int x;
     private int y;
 
-    public setPositionCommand() {
+    public setPositionCommand(int x, int y) {
+        this.x = x;
+        this.y = y;
 
     }
     @Override
     public void execute(IPlotter iPlotter) {
-
+        iPlotter.setPosition(x,y);
     }
 }

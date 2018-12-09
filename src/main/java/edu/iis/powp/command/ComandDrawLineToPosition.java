@@ -6,11 +6,12 @@ public class ComandDrawLineToPosition implements PlotterComand {
     private int x;
     private int y;
 
-    public drawLineToPositionCommand() {
-
+    public drawLineToPositionCommand(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
     @Override
     public void execute(IPlotter iPlotter) {
-
+        iPlotter.drawTo(x, y);
     }
 }
