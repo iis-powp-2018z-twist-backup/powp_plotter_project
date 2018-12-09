@@ -6,7 +6,7 @@ public class ComandDrawLineToPosition implements PlotterComand {
     private int x;
     private int y;
 
-    public drawLineToPositionCommand(int x, int y) {
+    public ComandDrawLineToPosition(int x, int y) {
         this.x = x;
         this.y = y;
     }
