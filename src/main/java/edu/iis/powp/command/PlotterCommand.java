@@ -2,6 +2,6 @@ package edu.iis.powp.command;
 
 import edu.iis.client.plottermagic.IPlotter;
 
-public interface PlotterComand {
+public interface PlotterCommand {
     public void execute(IPlotter iPlotter);
 }

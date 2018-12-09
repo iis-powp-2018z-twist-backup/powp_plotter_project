@@ -2,11 +2,11 @@ package edu.iis.powp.command;
 
 import edu.iis.client.plottermagic.IPlotter;
 
-public class ComandDrawLineToPosition implements PlotterComand {
+public class CommandDrawLineToPosition implements PlotterCommand {
     private int x;
     private int y;
 
-    public ComandDrawLineToPosition(int x, int y) {
+    public CommandDrawLineToPosition(int x, int y) {
         this.x = x;
         this.y = y;
     }

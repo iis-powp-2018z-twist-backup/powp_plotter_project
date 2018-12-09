@@ -40,6 +40,8 @@ public class TestPlotSoftPatterns {
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigureOptionListener2);
 		application.addTest("Figure Jane", selectTestJaneFigureOptionListener);
+		application.addTest("Rectangle", selectTestFigureOptionListener);
+		application.addTest("Circle", selectTestFigureOptionListener);
 
 	}
 
