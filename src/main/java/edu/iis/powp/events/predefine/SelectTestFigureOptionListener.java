@@ -30,13 +30,13 @@ public class SelectTestFigureOptionListener implements ActionListener {
 	    		
 	    	case "Rectangle":
 	    		Rectangle rectangleFactory = new Rectangle();
-	    		PlotterCommand rectangleCommand = rectangleFactory.getRectangleDrawCommand(0, 0, 100, 50);
+	    		PlotterCommand rectangleCommand = rectangleFactory.getRectangleDrawCommand(-50, -50, 100, 50);
 	    		rectangleCommand.execute(driverManager.getCurrentPlotter());
 	    		break;
 	    		
 	    	case "Triangle":
 	    		Triangle triangleFactory = new Triangle();
-	    		PlotterCommand traingleCommand = triangleFactory.getTriangleDrawCommand(0, 0, 50, 100, 150, 50);
+	    		PlotterCommand traingleCommand = triangleFactory.getTriangleDrawCommand(-50, -50, 50, 100, 150, 50);
 	    		traingleCommand.execute(driverManager.getCurrentPlotter());
 	    		break;
 	    	
