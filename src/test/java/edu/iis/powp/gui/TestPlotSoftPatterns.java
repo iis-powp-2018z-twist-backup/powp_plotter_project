@@ -4,7 +4,7 @@ import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import edu.kis.powp.drawer.shape.LineFactory;
 import edu.iis.client.plottermagic.ClientPlotter;
 import edu.iis.client.plottermagic.IPlotter;
 import edu.iis.powp.adapter.PlotterAdapter;
@@ -43,8 +43,12 @@ public class TestPlotSoftPatterns {
 		application.addDriver("Client Plotter", clientPlotter);
 		application.getDriverManager().setCurrentPlotter(clientPlotter);
 
-		IPlotter plotter = new PlotterAdapter(DrawerFeature.getDrawerController());
-		application.addDriver("Buggy Simulator", plotter);
+		IPlotter plotter = new PlotterAdapter(DrawerFeature.getDrawerController(), LineFactory.getBasicLine());
+		application.addDriver("Simulator", plotter);
+		IPlotter dotPlotter = new PlotterAdapter(DrawerFeature.getDrawerController(), LineFactory.getDottedLine());
+		application.addDriver("Simulator", dotPlotter);
+		IPlotter specPlotter = new PlotterAdapter(DrawerFeature.getDrawerController(), LineFactory.getSpecialLine());
+		application.addDriver("Simulator", specPlotter);
 
 		application.updateDriverInfo();
 	}
