@@ -10,6 +10,7 @@ import edu.iis.client.plottermagic.IPlotter;
 import edu.iis.powp.adapter.PlotterAdapter;
 import edu.iis.powp.app.Application;
 import edu.iis.powp.events.predefine.SelectTestFigureOptionListener;
+import edu.iis.powp.events.predefine.SelectTestFigureOptionSecondListener;
 import edu.iis.powp.features.DrawerFeature;
 
 public class TestPlotSoftPatterns {
@@ -24,8 +25,11 @@ public class TestPlotSoftPatterns {
 	private static void setupPresetTests(Application application) {
 		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
 				application.getDriverManager());
+		SelectTestFigureOptionSecondListener selectTestFigureOptionSecondListener = new SelectTestFigureOptionSecondListener(
+				application.getDriverManager());
 
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
+		application.addTest("Figure Joe 2", selectTestFigureOptionSecondListener);
 	}
 
 	/**
