@@ -31,6 +31,7 @@ public class MyAdapter extends DrawPanelController implements IPlotter {
 		DrawerFeature.getDrawerController().drawLine(line);
 
 		drawLine(line);
+		setPosition(x, y);
 	}
 
 	@Override
