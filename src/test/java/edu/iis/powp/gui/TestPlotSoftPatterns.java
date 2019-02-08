@@ -11,6 +11,8 @@ import edu.iis.powp.adapter.PlotterAdapter;
 import edu.iis.powp.app.Application;
 import edu.iis.powp.events.predefine.SelectTestFigureOptionListener;
 import edu.iis.powp.events.predefine.SelectTestFigureOptionSecondListener;
+import edu.iis.powp.events.predefine.SelectTestTriangleOptionListener;
+import edu.iis.powp.events.predefine.SelectTestRectangleOptionListener;
 import edu.iis.powp.features.DrawerFeature;
 
 public class TestPlotSoftPatterns {
@@ -18,7 +20,7 @@ public class TestPlotSoftPatterns {
 
 	/**
 	 * Setup test concerning preset figures in context.
-	 * 
+	 *
 	 * @param application
 	 *            Application context.
 	 */
@@ -27,14 +29,20 @@ public class TestPlotSoftPatterns {
 				application.getDriverManager());
 		SelectTestFigureOptionSecondListener selectTestFigureOptionSecondListener = new SelectTestFigureOptionSecondListener(
 				application.getDriverManager());
+        SelectTestRectangleOptionListener selectTestRectangleOptionListener = new SelectTestRectangleOptionListener(
+                application.getDriverManager());
+        SelectTestTriangleOptionListener selectTestTriangleOptionListener = new SelectTestTriangleOptionListener(
+                application.getDriverManager());
 
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigureOptionSecondListener);
+        application.addTest("Rectangle", selectTestRectangleOptionListener);
+        application.addTest("Triangle", selectTestTriangleOptionListener);
 	}
 
 	/**
 	 * Setup driver manager, and set default IPlotter for application.
-	 * 
+	 *
 	 * @param application
 	 *            Application context.
 	 */
@@ -55,7 +63,7 @@ public class TestPlotSoftPatterns {
 
 	/**
 	 * Auxiliary routines to enable using Buggy Simulator.
-	 * 
+	 *
 	 * @param application
 	 *            Application context.
 	 */
@@ -63,7 +71,7 @@ public class TestPlotSoftPatterns {
 
 	/**
 	 * Setup menu for adjusting logging settings.
-	 * 
+	 *
 	 * @param application
 	 *            Application context.
 	 */
