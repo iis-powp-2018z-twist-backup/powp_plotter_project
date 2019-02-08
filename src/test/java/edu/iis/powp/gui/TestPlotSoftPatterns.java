@@ -7,13 +7,10 @@ import java.util.logging.Logger;
 
 import edu.iis.client.plottermagic.ClientPlotter;
 import edu.iis.client.plottermagic.IPlotter;
-import edu.iis.powp.adapter.MyAdapter;
+import edu.iis.powp.adapter.PlotterAdapter;
 import edu.iis.powp.app.Application;
-import edu.iis.powp.events.predefine.SelectChangeVisibleOptionListener;
 import edu.iis.powp.events.predefine.SelectTestFigureOptionListener;
 import edu.iis.powp.features.DrawerFeature;
-import edu.kis.powp.drawer.panel.DefaultDrawerFrame;
-import edu.kis.powp.drawer.panel.DrawPanelController;
 
 public class TestPlotSoftPatterns {
 	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -42,7 +39,7 @@ public class TestPlotSoftPatterns {
 		application.addDriver("Client Plotter", clientPlotter);
 		application.getDriverManager().setCurrentPlotter(clientPlotter);
 
-		IPlotter plotter = new MyAdapter(DrawerFeature.getDrawerController());
+		IPlotter plotter = new PlotterAdapter(DrawerFeature.getDrawerController());
 		application.addDriver("Buggy Simulator", plotter);
 
 		application.updateDriverInfo();
@@ -84,7 +81,7 @@ public class TestPlotSoftPatterns {
 				Application app = new Application();
 				DrawerFeature.setupDrawerPlugin(app);
 
-				
+
 
 				setupDrivers(app);
 				setupPresetTests(app);
