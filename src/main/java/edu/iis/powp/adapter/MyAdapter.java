@@ -11,7 +11,7 @@ import edu.kis.powp.drawer.shape.LineFactory;
  */
 public class MyAdapter extends DrawPanelController implements IPlotter {
 
-	DrawPanelController drawerPanelController = DrawerFeature.getDrawerController();
+	DrawPanelController drawerController = DrawerFeature.getDrawerController();
 
 	private int startX = 0, startY = 0;
 
@@ -31,7 +31,7 @@ public class MyAdapter extends DrawPanelController implements IPlotter {
 		line.setStartCoordinates(this.startX, this.startY);
 		line.setEndCoordinates(x, y);
 
-		drawerPanelController.drawLine(line);
+		drawerController.drawLine(line);
 		this.setPosition(x, y);
 	}
 
